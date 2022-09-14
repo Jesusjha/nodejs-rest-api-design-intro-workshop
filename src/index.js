@@ -6,7 +6,7 @@ const connect = require("./db/connect");
 // const { seedBooks } = require("./db/seed");
 
 connect().then(async function onServerInit() {
-  config.logger.info(`DB connected`);
+  config.logger.info(`DB connected, always!`);
 
   // uncomment if you need to seed the database before
   // await seedBooks();

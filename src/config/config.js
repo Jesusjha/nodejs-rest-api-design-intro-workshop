@@ -5,6 +5,7 @@ dotenv.config();
 
 const ENV = process.env.NODE_ENV || "development";
 
+
 logger.enableAll();
 
 const CONFIG = {
@@ -110,3 +111,5 @@ const CONFIG = {
 };
 
 module.exports = CONFIG[ENV];
+
+// console.log(CONFIG[ENV])
