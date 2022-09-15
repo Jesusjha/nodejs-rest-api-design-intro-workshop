@@ -1,4 +1,28 @@
 const db = require("../models");
+const { logger } = require("../config/config");
+
+const signUp = async(req, res, next) => {
+    const { uid, email } = req.user;
+  
+    try {
+      const user = await db.User.findOne({ email: email });
+  
+      if (user) {
+        return res.sendStatus(200);
+      }
+  
+      const newUser = await db.User.create({
+        _id: uid,
+        email: email,
+      });
+  
+      logger.debug(newUser);
+  
+      res.sendStatus(201);
+    } catch (error) {
+      next(error);
+    }
+  }
 
 async function getUsers(req, res, next) {
   try {
@@ -123,4 +147,5 @@ module.exports = {
   createUser: createUser,
   updateUser: updateUser,
   deleteUser: deleteUser,
+  signUp: signUp,
 };

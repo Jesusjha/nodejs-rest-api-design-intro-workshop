@@ -20,8 +20,8 @@
     "url": "https://github.com/assembler-school/nodejs-rest-api-design-intro-workshop.git"
   },
   "dependencies": {
-    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "dotenv": "^8.6.0",
     "express": "^4.17.1",
